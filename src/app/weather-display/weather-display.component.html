@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div *ngIf="weatherData$ | async as weatherData" class="weather-info">
+                <h2 class="mt-4">{{ weatherData.name }}</h2>
+                <div class="weather-details">
+                    <p><strong>Temperature:</strong> {{ (weatherData.main.temp - 273.15).toFixed(2) }} °C</p>
+                    <p><strong>Weather:</strong> {{ weatherData.weather[0].main }}</p>
+                    <p><strong>Description:</strong> {{ weatherData.weather[0].description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
